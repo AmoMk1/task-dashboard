@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>今日やること</title>
+<style>
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ background: #0a0a0f; color: #c8c8d8; font-family: -apple-system, sans-serif; padding: 20px 16px 40px; }}
+  .header {{ margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #1e1e2e; }}
+  .header h1 {{ font-size: 1.1rem; color: #7c6af7; letter-spacing: 0.05em; }}
+  .updated {{ font-size: 0.7rem; color: #555568; margin-top: 4px; }}
+  .condition-bar {{ padding: 10px 14px; border-radius: 6px; font-size: 0.85rem; margin-bottom: 20px; }}
+  .section-title {{ font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555568; margin-bottom: 10px; }}
+  .task-card {{ padding: 14px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid; }}
+  .task-title {{ font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; color: #c8c8d8; }}
+  .task-meta {{ font-size: 0.75rem; color: #555568; }}
+  .first-step {{ font-size: 0.8rem; color: #7fc8a0; margin-top: 8px; }}
+  .done-when {{ font-size: 0.75rem; color: #7a9fc8; margin-top: 4px; }}
+  .subtask-list {{ list-style: none; margin-top: 8px; padding-left: 8px; }}
+  .subtask-item {{ font-size: 0.75rem; color: #555568; padding: 2px 0; }}
+  .subtask-item::before {{ content: "— "; }}
+  .priority-high {{ border-color: #e05050; background: rgba(224,80,80,0.08); }}
+  .priority-mid  {{ border-color: #e0a050; background: rgba(224,160,80,0.08); }}
+  .priority-low  {{ border-color: #5080e0; background: rgba(80,128,224,0.08); }}
+  .badge {{ display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 4px; }}
+  .memo-item {{ font-size: 0.82rem; color: #555568; padding: 6px 10px; border-left: 2px solid #1e1e2e; margin-bottom: 6px; line-height: 1.5; }}
+  .section {{ margin-bottom: 28px; }}
+  .empty {{ font-size: 0.82rem; color: #555568; font-style: italic; }}
+  .claude-link {{ display: block; margin: 16px 0; padding: 12px; background: rgba(200,60,60,0.15); border: 1px solid #c87a7a; border-radius: 6px; color: #c87a7a; text-align: center; font-size: 0.9rem; text-decoration: none; }}
+  .completed-task {{ font-size: 0.82rem; color: #555568; padding: 6px 10px; border-left: 2px solid #2a2a3a; margin-bottom: 4px; text-decoration: line-through; }}
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>// 今日やること</h1>
+    <div class="updated">2026-03-09 02:51</div>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">— tasks</div>
+    <div class="task-card priority-mid"><div class="badge" style="color:#e0a050">中</div><div class="task-title">ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）</div><div class="task-meta" style="margin-top:4px">テキスト色が暗い、文字が小さい、視線誘導が最適でない3点の改善が必要</div><div class="first-step">▶ 現在のダッシュボードのスクリーンショットを撮り、具体的な改善箇所を洗い出す</div><div class="done-when">✓ テキスト色が明るく読みやすく、文字サイズが適切で、視線誘導が改善されたダッシュボードが完成した状態</div><ul class="subtask-list"><li class="subtask-item">テキスト色を明るく変更して視認性を向上させる</li><li class="subtask-item">文字サイズを拡大または階層化する</li><li class="subtask-item">視線誘導を改善するためにレイアウトやCTAの配置を見直す</li></ul></div><div class="task-card priority-mid"><div class="badge" style="color:#e0a050">中</div><div class="task-title">ポモロードタイマー機能の実装</div><div class="task-meta" style="margin-top:4px">ダッシュボード関連で言及されたタイマー機能</div><div class="first-step">▶ ポモロードタイマーの要件定義書を作成する</div><div class="done-when">✓ ポモロードタイマーがダッシュボードに実装され、動作確認が完了した状態</div><ul class="subtask-list"><li class="subtask-item">タイマーの機能要件（作業時間・休憩時間など）を定義する</li><li class="subtask-item">UIデザインをスケッチまたはプロトタイプで作成する</li><li class="subtask-item">タイマー機能をコーディング・実装する</li><li class="subtask-item">ダッシュボードに統合して動作テストを実施する</li></ul></div>
+  </div>
+  <div class="section">
+    <div class="section-title">— completed</div>
+    <div class="completed-task">情報過多対策の管理法を構築（SNS制限、情報検閲、テキスト量削減、要約化、ファイル自動整理など）</div><div class="completed-task">作業開始の遅延を補助する管理法の構築</div><div class="completed-task">遅い走り出しを補助する管理法を構築（思い起こし削減、目的表示、ポモロードタイマー）</div><div class="completed-task">タスク遅延を防ぐための管理法の構築（思い出し削減・最終目的の表示・ポモロードタイマー導入）</div><div class="completed-task">情報過多への対策システムの構築（SNS制限・情報検閲・テキスト量削減・要約化・ファイル自動整理など）</div>
+  </div>
+  <div class="section">
+    <div class="section-title">— memos</div>
+    <div class="memo-item">AI活用はシステム構築後に活用開始</div><div class="memo-item">ドーパミン鎮静：動画・マルチタスクではなく音楽を聴く方が効果的</div><div class="memo-item">ここより下は追記禁止</div><div class="memo-item">AI情報の日夜更新と集中力散漫の相性が悪い</div><div class="memo-item">上記のシステム構築後にAI活用を始める</div><div class="memo-item">Steam自動アップデート、Limbus Company JSONテキスト自動更新は後回し</div><div class="memo-item">AI関連の日々更新される情報は気が散りやすいため相性が悪い</div><div class="memo-item">ドーパミン鎮静のため動画やマルチタスクより音楽を聴くようにする</div><div class="memo-item">ポモロードタイマーの言及あり（詳細不明）</div><div class="memo-item">ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）は既存タスクとして登録済み</div><div class="memo-item">2026-03-08の投稿。ステータス表示あり（🟢）</div><div class="memo-item">2026-03-08: ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）とポモロードタイマー機能の実装は既に登録済み</div><div class="memo-item">ダッシュボードのUI改善とポモロードタイマー機能は既に登録済みタスク。投稿1は重複内容。</div><div class="memo-item">2026-03-08時点でダッシュボードUI改善とポモロードタイマー機能の実装は既に登録済みタスク</div><div class="memo-item">スマホ化に失敗し続けている、次回トライは2時</div>
+  </div>
+</body>
+</html>
