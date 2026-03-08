@@ -5,36 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>今日やること</title>
 <style>
-  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{ background: #0a0a0f !important; color: #c8c8d8 !important; font-family: -apple-system, sans-serif; padding: 20px 16px 40px; }}
-  .header {{ margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #1e1e2e; }}
-  .header h1 {{ font-size: 1.1rem; color: #7c6af7; letter-spacing: 0.05em; }}
-  .updated {{ font-size: 0.7rem; color: #555568; margin-top: 4px; }}
-  .condition-bar {{ padding: 10px 14px; border-radius: 6px; font-size: 0.85rem; margin-bottom: 20px; }}
-  .section-title {{ font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555568; margin-bottom: 10px; }}
-  .task-card {{ padding: 14px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid; }}
-  .task-title {{ font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; color: #c8c8d8; }}
-  .task-meta {{ font-size: 0.75rem; color: #555568; }}
-  .first-step {{ font-size: 0.8rem; color: #7fc8a0; margin-top: 8px; }}
-  .done-when {{ font-size: 0.75rem; color: #7a9fc8; margin-top: 4px; }}
-  .subtask-list {{ list-style: none; margin-top: 8px; padding-left: 8px; }}
-  .subtask-item {{ font-size: 0.75rem; color: #555568; padding: 2px 0; }}
-  .subtask-item::before {{ content: "— "; }}
-  .priority-high {{ border-color: #e05050; background: rgba(224,80,80,0.08); }}
-  .priority-mid  {{ border-color: #e0a050; background: rgba(224,160,80,0.08); }}
-  .priority-low  {{ border-color: #5080e0; background: rgba(80,128,224,0.08); }}
-  .badge {{ display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 4px; }}
-  .memo-item {{ font-size: 0.82rem; color: #555568; padding: 6px 10px; border-left: 2px solid #1e1e2e; margin-bottom: 6px; line-height: 1.5; }}
-  .section {{ margin-bottom: 28px; }}
-  .empty {{ font-size: 0.82rem; color: #555568; font-style: italic; }}
-  .claude-link {{ display: block; margin: 16px 0; padding: 12px; background: rgba(200,60,60,0.15); border: 1px solid #c87a7a; border-radius: 6px; color: #c87a7a; text-align: center; font-size: 0.9rem; text-decoration: none; }}
-  .completed-task {{ font-size: 0.82rem; color: #555568; padding: 6px 10px; border-left: 2px solid #2a2a3a; margin-bottom: 4px; text-decoration: line-through; }}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a0f !important; color: #c8c8d8 !important; font-family: -apple-system, sans-serif; padding: 20px 16px 40px; }
+  .header { margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #1e1e2e; }
+  .header h1 { font-size: 1.1rem; color: #7c6af7; letter-spacing: 0.05em; }
+  .updated { font-size: 0.7rem; color: #555568; margin-top: 4px; }
+  .condition-bar { padding: 10px 14px; border-radius: 6px; font-size: 0.85rem; margin-bottom: 20px; }
+  .section-title { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555568; margin-bottom: 10px; }
+  .task-card { padding: 14px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid; }
+  .task-title { font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; color: #c8c8d8; }
+  .task-meta { font-size: 0.75rem; color: #555568; }
+  .first-step { font-size: 0.8rem; color: #7fc8a0; margin-top: 8px; }
+  .done-when { font-size: 0.75rem; color: #7a9fc8; margin-top: 4px; }
+  .subtask-list { list-style: none; margin-top: 8px; padding-left: 8px; }
+  .subtask-item { font-size: 0.75rem; color: #555568; padding: 2px 0; }
+  .subtask-item::before { content: "— "; }
+  .priority-high { border-color: #e05050; background: rgba(224,80,80,0.08); }
+  .priority-mid  { border-color: #e0a050; background: rgba(224,160,80,0.08); }
+  .priority-low  { border-color: #5080e0; background: rgba(80,128,224,0.08); }
+  .badge { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .memo-item { font-size: 0.82rem; color: #555568; padding: 6px 10px; border-left: 2px solid #1e1e2e; margin-bottom: 6px; line-height: 1.5; }
+  .section { margin-bottom: 28px; }
+  .empty { font-size: 0.82rem; color: #555568; font-style: italic; }
+  .claude-link { display: block; margin: 16px 0; padding: 12px; background: rgba(200,60,60,0.15); border: 1px solid #c87a7a; border-radius: 6px; color: #c87a7a; text-align: center; font-size: 0.9rem; text-decoration: none; }
+  .completed-task { font-size: 0.82rem; color: #555568; padding: 6px 10px; border-left: 2px solid #2a2a3a; margin-bottom: 4px; text-decoration: line-through; }
 </style>
 </head>
 <body style="background:#0a0a0f;color:#c8c8d8;margin:0;padding:20px 16px 40px;font-family:-apple-system,sans-serif;">
   <div class="header">
     <h1>// 今日やること</h1>
-    <div class="updated">2026-03-09 03:12</div>
+    <div class="updated">2026-03-09 03:15</div>
   </div>
   
   <div class="section">
@@ -47,7 +47,7 @@
   </div>
   <div class="section">
     <div class="section-title">— memos</div>
-    <div class="memo-item">AI活用はシステム構築後に活用開始</div><div class="memo-item">ドーパミン鎮静：動画・マルチタスクではなく音楽を聴く方が効果的</div><div class="memo-item">ここより下は追記禁止</div><div class="memo-item">AI情報の日夜更新と集中力散漫の相性が悪い</div><div class="memo-item">上記のシステム構築後にAI活用を始める</div><div class="memo-item">Steam自動アップデート、Limbus Company JSONテキスト自動更新は後回し</div><div class="memo-item">AI関連の日々更新される情報は気が散りやすいため相性が悪い</div><div class="memo-item">ドーパミン鎮静のため動画やマルチタスクより音楽を聴くようにする</div><div class="memo-item">ポモロードタイマーの言及あり（詳細不明）</div><div class="memo-item">ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）は既存タスクとして登録済み</div><div class="memo-item">2026-03-08の投稿。ステータス表示あり（🟢）</div><div class="memo-item">2026-03-08: ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）とポモロードタイマー機能の実装は既に登録済み</div><div class="memo-item">ダッシュボードのUI改善とポモロードタイマー機能は既に登録済みタスク。投稿1は重複内容。</div><div class="memo-item">2026-03-08時点でダッシュボードUI改善とポモロードタイマー機能の実装は既に登録済みタスク</div><div class="memo-item">スマホ化に失敗し続けている、次回トライは2時</div><div class="memo-item">スマホ化に失敗し続けている。次の試行は2時に予定。</div><div class="memo-item">スマホ化に失敗し続けている。次回トライアルは2026-03-09 02:00</div><div class="memo-item">スマホ化が継続して失敗している。次の試行は2時。</div>
+    <div class="memo-item">AI活用はシステム構築後に活用開始</div><div class="memo-item">ドーパミン鎮静：動画・マルチタスクではなく音楽を聴く方が効果的</div><div class="memo-item">ここより下は追記禁止</div><div class="memo-item">AI情報の日夜更新と集中力散漫の相性が悪い</div><div class="memo-item">上記のシステム構築後にAI活用を始める</div><div class="memo-item">Steam自動アップデート、Limbus Company JSONテキスト自動更新は後回し</div><div class="memo-item">AI関連の日々更新される情報は気が散りやすいため相性が悪い</div><div class="memo-item">ドーパミン鎮静のため動画やマルチタスクより音楽を聴くようにする</div><div class="memo-item">ポモロードタイマーの言及あり（詳細不明）</div><div class="memo-item">ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）は既存タスクとして登録済み</div><div class="memo-item">2026-03-08の投稿。ステータス表示あり（🟢）</div><div class="memo-item">2026-03-08: ダッシュボードのUI改善（テキスト色・サイズ・視線誘導）とポモロードタイマー機能の実装は既に登録済み</div><div class="memo-item">ダッシュボードのUI改善とポモロードタイマー機能は既に登録済みタスク。投稿1は重複内容。</div><div class="memo-item">2026-03-08時点でダッシュボードUI改善とポモロードタイマー機能の実装は既に登録済みタスク</div><div class="memo-item">スマホ化に失敗し続けている、次回トライは2時</div><div class="memo-item">スマホ化に失敗し続けている。次の試行は2時に予定。</div><div class="memo-item">スマホ化に失敗し続けている。次回トライアルは2026-03-09 02:00</div><div class="memo-item">スマホ化が継続して失敗している。次の試行は2時。</div><div class="memo-item">スマホ化に失敗し続けている。次の試行は2026-03-09の14:00予定</div>
   </div>
 </body>
 </html>
